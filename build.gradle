@@ -1,0 +1,36 @@
+plugins {
+    id 'java'
+    id 'application'
+    id "com.github.johnrengelman.shadow" version "6.0.0"
+}
+
+compileJava.options.encoding = 'UTF-8'
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Spring
+    implementation 'org.springframework:spring-context:5.1.4.RELEASE'
+    implementation 'org.springframework:spring-orm:5.1.4.RELEASE'
+    implementation 'org.springframework.data:spring-data-jpa:2.1.4.RELEASE'
+
+    // Hibernate
+    implementation 'org.hibernate:hibernate-core:5.2.12.Final'
+    implementation 'javax.xml.bind:jaxb-api:2.3.1'
+    /*implementation 'org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final'*/
+
+    // Database PostgreSQL
+    implementation group: 'org.postgresql', name: 'postgresql', version: '42.2.19'
+}
+
+application {
+    
+}
